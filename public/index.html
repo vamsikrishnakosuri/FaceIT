@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#03070b">
+  <title>Nova — Face to face intelligence</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="experience" data-state="idle">
+    <div class="ambient" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="brand" aria-label="Nova">NOVA <span>01</span></p>
+
+    <section class="presence" aria-label="Nova, your conversational AI">
+      <div class="halo halo--outer"></div><div class="halo halo--inner"></div>
+      <svg class="face" viewBox="0 0 620 720" role="img" aria-label="A luminous digital human face">
+        <defs>
+          <radialGradient id="skin" cx="50%" cy="38%" r="58%"><stop offset="0" stop-color="#bedbd7" stop-opacity=".88"/><stop offset=".48" stop-color="#557c7d" stop-opacity=".67"/><stop offset="1" stop-color="#071116" stop-opacity=".25"/></radialGradient>
+          <linearGradient id="edge" x1="0" x2="1"><stop stop-color="#67fff1" stop-opacity="0"/><stop offset=".5" stop-color="#aefff8"/><stop offset="1" stop-color="#67fff1" stop-opacity="0"/></linearGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <clipPath id="head"><path d="M310 41C181 41 105 142 110 288c4 102 39 225 103 309 42 55 77 76 97 76s55-21 97-76c64-84 99-207 103-309C515 142 439 41 310 41Z"/></clipPath>
+        </defs>
+        <g class="head">
+          <path class="head-shape" d="M310 41C181 41 105 142 110 288c4 102 39 225 103 309 42 55 77 76 97 76s55-21 97-76c64-84 99-207 103-309C515 142 439 41 310 41Z" fill="url(#skin)" stroke="#8dece5" stroke-opacity=".22"/>
+          <g clip-path="url(#head)" class="facets" opacity=".28"><path d="M80 188 235 95l75 194-183 69m413-170L385 95l-75 194 183 69M128 358l182-69-71 256m253-187-182-69 71 256M239 545l71-256 71 256-71 128Z" fill="none" stroke="#b8fff9"/><path d="M110 270h400M150 462h320M310 42v631" stroke="#69d6d2" stroke-dasharray="2 13"/></g>
+          <path class="brow brow-l" d="M166 257q68-39 119 5"/><path class="brow brow-r" d="M335 262q51-44 119-5"/>
+          <g class="eyes"><g><path class="eye" d="M164 298q55-52 123 0-60 45-123 0Z"/><ellipse class="iris" cx="230" cy="298" rx="18" ry="22"/><circle cx="234" cy="292" r="4" fill="#fff"/></g><g><path class="eye" d="M333 298q68-52 123 0-63 45-123 0Z"/><ellipse class="iris" cx="390" cy="298" rx="18" ry="22"/><circle cx="394" cy="292" r="4" fill="#fff"/></g></g>
+          <path class="nose" d="M310 291c-7 84-26 137-26 154 14 14 38 14 52 0"/>
+          <g class="mouth" filter="url(#glow)"><path class="lip-upper" d="M228 519q49-22 82-8 33-14 82 8-78 16-164 0Z"/><path class="mouth-cavity" d="M230 520q80-10 160 0-12 64-80 64t-80-64Z"/><path class="lip-lower" d="M230 521q80 40 160 0-21 55-80 55t-80-55Z"/></g>
+          <path class="contour" d="M130 343q20 197 113 278M490 343q-20 197-113 278"/>
+        </g>
+      </svg>
+      <div class="scan" aria-hidden="true"></div>
+    </section>
+
+    <section class="conversation-controls">
+      <button class="start" type="button" aria-label="Start voice conversation"><span class="start-dot"></span><span class="start-label">Begin presence</span></button>
+      <p class="status" role="status" aria-live="polite">Ready when you are</p>
+      <p class="hint">Speak naturally · tap the face to pause</p>
+    </section>
+
+    <button class="settings-toggle" aria-label="Accessibility options" aria-expanded="false">•••</button>
+    <aside class="settings" aria-label="Accessibility options" hidden>
+      <label><input type="checkbox" id="captions"> Captions</label>
+      <label><input type="checkbox" id="reduced"> Reduce motion</label>
+      <button id="textMode">Use text instead</button>
+    </aside>
+    <p class="captions" hidden></p>
+    <form class="text-entry" hidden><label for="textInput">Talk to Nova</label><input id="textInput" autocomplete="off"><button>Send</button></form>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
